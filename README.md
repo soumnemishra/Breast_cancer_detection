@@ -64,5 +64,25 @@ Breast cancer is the most commonly diagnosed cancer worldwide. Early detection i
 > InceptionV3 with RMSprop optimizer demonstrated a strong trade-off between accuracy and sensitivity, making it suitable for medical diagnosis applications.
 
 ---
+## 🧪 Installation & Usage
 
+```bash
+# Clone the repo
+git clone https://github.com/your-username/breast-ultrasound-classification.git
+cd breast-ultrasound-classification
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the notebook
+jupyter notebook Breast_Ultrasound_Classification.ipynb
+
+## 📚 References
+
+1. **World Health Organization.** (2023). *Breast cancer*. [Link](https://www.who.int/news-room/fact-sheets/detail/breast-cancer)
+2. **American Cancer Society.** (2023). *Breast cancer survival rates*. [Link](https://www.cancer.org/cancer/breast-cancer/understanding-a-breast-cancer-diagnosis/breast-cancer-survival-rates.html)
+3. Han, S., Kang, H., Jeong, J., & Park, S. (2018). *Breast cancer diagnosis using deep learning on mammography images*. Journal of Medical Imaging, 5(2), 021402. [DOI:10.1117/1.JMI.5.2.021402](https://doi.org/10.1117/1.JMI.5.2.021402)
+4. Litjens, G., Kooi, T., Bejnordi, B. E., et al. (2017). *A survey on deep learning in medical image analysis*. Medical Image Analysis, 42, 60–88. [DOI:10.1016/j.media.2017.07.005](https://doi.org/10.1016/j.media.2017.07.005)
+5. Alcaraz, J., Lopez, M., & Sanchez, R. (2020). *Deep learning for breast ultrasound image classification*. IEEE Transactions on Medical Imaging, 39(5), 1456–1465. [DOI:10.1109/TMI.2019.2944773](https://doi.org/10.1109/TMI.2019.2944773)
+6. Kaggle. *Breast Ultrasound Images Dataset*. [https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset](https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset)
 
