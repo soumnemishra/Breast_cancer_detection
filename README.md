@@ -1,43 +1,68 @@
-# 🧬 Breast Cancer Detection using Deep Learning on Ultrasound Images
+# Breast Tumor Classification Using Deep Learning on Ultrasound Images
 
-Breast cancer is one of the most common causes of death among women worldwide. **Early detection** significantly improves survival rates. In this project, we leverage deep learning techniques to classify **breast ultrasound images** into three categories: **normal**, **benign**, and **malignant**.
+This repository presents the implementation of a deep learning-based pipeline for classifying breast ultrasound images into **benign**, **malignant**, and **normal** categories. Developed as part of the M.Tech program in **Artificial Intelligence and Data Science** at **Amrita Vishwa Vidyapeetham, Faridabad**, this project aims to support early and accessible breast cancer detection, particularly in resource-constrained environments.
 
-## 📊 Dataset
+---
 
-This project uses the **Breast Ultrasound Images Dataset**, publicly available and curated by Al-Dhabyani et al.
+## 🔍 Project Overview
 
-- **Total Patients**: 600 women (ages 25–75)
-- **Total Images**: 780 PNG images
-- **Image Size**: ~500x500 pixels
-- **Classes**: 
-  - 🟢 Normal
-  - 🟡 Benign
-  - 🔴 Malignant
-- **Includes**: Original images and corresponding ground truth masks
-- **Year of Collection**: 2018
+Breast cancer is the most commonly diagnosed cancer worldwide. Early detection is crucial, and ultrasound imaging is a cost-effective diagnostic tool. This project utilizes **transfer learning** with state-of-the-art Convolutional Neural Networks (CNNs) to automate the classification process of breast ultrasound images.
 
-> 📚 **If you use this dataset, please cite:**
->
-> *Al-Dhabyani W, Gomaa M, Khaled H, Fahmy A. Dataset of breast ultrasound images. Data in Brief. 2020 Feb;28:104863.*
-> [DOI: 10.1016/j.dib.2019.104863](https://doi.org/10.1016/j.dib.2019.104863)
+- **Dataset**: 780 images (Kaggle)
+  - 437 Benign
+  - 210 Malignant
+  - 133 Normal
+- **Techniques**: Transfer learning, data augmentation, class weighting
+- **Frameworks**: TensorFlow 2.15, Keras 2.15
+- **Platform**: Google Colab (Pro)
 
-## 🧠 Methods Used
+---
 
-- Convolutional Neural Networks (CNNs)
-- TensorFlow / Keras framework
-- Data augmentation (e.g., flipping, rotation)
-- Categorical Crossentropy loss
-- Softmax activation for multi-class classification
-- Confusion matrix, classification report for evaluation
+## 🎯 Objectives
 
-## 📂 Project Files
+- Develop an automated classification system for breast ultrasound images.
+- Prioritize high sensitivity in detecting malignant tumors.
+- Address small dataset challenges through augmentation and stratified sampling.
+- Create a reproducible, low-cost diagnostic pipeline.
+- Lay the groundwork for clinical deployment and integration in telemedicine platforms.
 
-- `breast_cancer_detection.ipynb`: Main notebook containing the complete workflow (loading data, preprocessing, model building, training, evaluation).
-- `README.md`: Project overview and setup guide.
+---
 
-## 🚀 How to Run
+## 🧪 Methodology
 
-1. Clone the repository:
-   ```bash
- [  git clone https://github.com/your-username/breast_cancer_detection.git](https://github.com/soumnemishra/Breast_cancer_detection.git)
+### ➤ Data Preprocessing
+- Images resized (224x224 for VGG16/ResNet50, 299x299 for InceptionV3)
+- Normalization using ImageNet statistics
+- Augmentation: rotation, flips, zoom
+
+### ➤ Dataset Split
+- Stratified split: 70% training, 15% validation, 15% test
+
+### ➤ Model Architecture
+- Pre-trained models: **VGG16**, **ResNet50**, **InceptionV3**
+- Custom classification head added and fine-tuned
+- Class weights applied to mitigate imbalance
+
+### ➤ Evaluation Metrics
+- Accuracy
+- Sensitivity (Malignant-focused)
+- Specificity
+- F1 Score
+- Confusion matrices
+
+---
+
+## 📈 Results
+
+| Model                  | Accuracy (%) | Test Loss | Sensitivity (Malignant, %) | Training Time (s) |
+|------------------------|--------------|-----------|-----------------------------|--------------------|
+| VGG16                  | 64.96        | 0.9251    | 77.42                       | 5349               |
+| ResNet50               | 74.36        | 0.7554    | 45.16                       | 1955               |
+| InceptionV3 (AdamW)    | 75.21        | 0.7460    | 61.29                       | 3015               |
+| **InceptionV3 (RMSprop)** | **73.48**    | **0.7859** | **61.29**                   | **3015**           |
+
+> InceptionV3 with RMSprop optimizer demonstrated a strong trade-off between accuracy and sensitivity, making it suitable for medical diagnosis applications.
+
+---
+
 
