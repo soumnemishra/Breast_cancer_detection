@@ -356,13 +356,7 @@ This project represents a contribution to the growing body of research in AI-pow
 
 ---
 
-<div align="center">
-  <h3>🌟 Star this repository if you found it helpful! 🌟</h3>
-  <p>
-    <a href="https://github.com/soumenmishra/breast-cancer-classification/issues">Report Bug</a> •
-    <a href="https://github.com/soumenmishra/breast-cancer-classification/issues">Request Feature</a> •
-    <a href="#-contributing">Contributing</a>
-  </p>
+
   
   <p><em>Academic research by Soumen Mishra - M.Tech AI & DS, Amrita Vishwa Vidyapeetham</em></p>
   <p><em>Made with ❤️ for advancing medical AI and improving healthcare outcomes</em></p>
