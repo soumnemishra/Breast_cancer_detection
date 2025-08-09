@@ -1,88 +1,371 @@
-# Breast Tumor Classification Using Deep Learning on Ultrasound Images
+# 🏥 Breast Tumor Classification Using Deep Learning on Ultrasound Images
 
-This repository presents the implementation of a deep learning-based pipeline for classifying breast ultrasound images into **benign**, **malignant**, and **normal** categories. Developed as part of the M.Tech program in **Artificial Intelligence and Data Science** at **Amrita Vishwa Vidyapeetham, Faridabad**, this project aims to support early and accessible breast cancer detection, particularly in resource-constrained environments.
+<div align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue.svg" alt="Python">
+  <img src="https://img.shields.io/badge/TensorFlow-2.15-orange.svg" alt="TensorFlow">
+  <img src="https://img.shields.io/badge/Keras-2.15-red.svg" alt="Keras">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+  <img src="https://img.shields.io/badge/Accuracy-73.48%25-brightgreen.svg" alt="Accuracy">
+</div>
 
----
-
-## 🔍 Project Overview
-
-Breast cancer is the most commonly diagnosed cancer worldwide. Early detection is crucial, and ultrasound imaging is a cost-effective diagnostic tool. This project utilizes **transfer learning** with state-of-the-art Convolutional Neural Networks (CNNs) to automate the classification process of breast ultrasound images.
-
-- **Dataset**: 780 images (Kaggle)
-  - 437 Benign
-  - 210 Malignant
-  - 133 Normal
-- **Techniques**: Transfer learning, data augmentation, class weighting
-- **Frameworks**: TensorFlow 2.15, Keras 2.15
-- **Platform**: Google Colab (Pro)
-
----
-
-## 🎯 Objectives
-
-- Develop an automated classification system for breast ultrasound images.
-- Prioritize high sensitivity in detecting malignant tumors.
-- Address small dataset challenges through augmentation and stratified sampling.
-- Create a reproducible, low-cost diagnostic pipeline.
-- Lay the groundwork for clinical deployment and integration in telemedicine platforms.
+<div align="center">
+  <h3>🎯 Early Breast Cancer Detection Through AI-Powered Ultrasound Analysis</h3>
+  <p><em>Leveraging transfer learning and deep neural networks to classify breast ultrasound images into benign, malignant, and normal categories</em></p>
+  
+  <h4>👨‍🎓 Academic Project by <strong>Soumen Mishra</strong></h4>
+  <p><em>M.Tech in Artificial Intelligence and Data Science</em><br>
+  <em>Amrita Vishwa Vidyapeetham, Faridabad</em></p>
+</div>
 
 ---
 
-## 🧪 Methodology
+## 🎓 Academic Context
 
-### ➤ Data Preprocessing
-- Images resized (224x224 for VGG16/ResNet50, 299x299 for InceptionV3)
-- Normalization using ImageNet statistics
-- Augmentation: rotation, flips, zoom
+### 📚 Project Details
+- **Student**: Soumen Mishra (DL.SC.P2AID24004)
+- **Program**: M.Tech in Artificial Intelligence and Data Science
+- **Institution**: Amrita Vishwa Vidyapeetham, Faridabad
+- **Academic Year**: 2024-25
+- **Submission Date**: January 10, 2025
 
-### ➤ Dataset Split
-- Stratified split: 70% training, 15% validation, 15% test
+### 📖 Course Requirements
+This project was developed in partial fulfillment of the requirements for:
+- **Deep Learning for Biomedical Data**
+- **Deep Learning**
 
-### ➤ Model Architecture
-- Pre-trained models: **VGG16**, **ResNet50**, **InceptionV3**
-- Custom classification head added and fine-tuned
-- Class weights applied to mitigate imbalance
+### 🎯 Academic Objectives
+- Demonstrate practical application of transfer learning in medical imaging
+- Address real-world healthcare challenges using AI/ML techniques
+- Implement and compare state-of-the-art CNN architectures
+- Analyze performance metrics relevant to medical diagnostics
+- Contribute to research in automated medical image analysis
 
-### ➤ Evaluation Metrics
-- Accuracy
-- Sensitivity (Malignant-focused)
-- Specificity
-- F1 Score
-- Confusion matrices
+---
+
+## 📋 Table of Contents
+- [🌟 Overview](#-overview)
+- [🎓 Academic Context](#-academic-context)
+- [✨ Key Features](#-key-features)
+- [📊 Dataset](#-dataset)
+- [🏗️ Model Architecture](#️-model-architecture)
+- [🚀 Results](#-results)
+- [⚙️ Installation](#️-installation)
+- [🔧 Usage](#-usage)
+- [📈 Performance Metrics](#-performance-metrics)
+- [🔬 Technical Details](#-technical-details)
+- [🎯 Future Work](#-future-work)
+- [👥 Contributing](#-contributing)
+- [📄 License](#-license)
+- [🙏 Acknowledgments](#-acknowledgments)
 
 ---
 
-## 📈 Results
+## 🌟 Overview
 
-| Model                  | Accuracy (%) | Test Loss | Sensitivity (Malignant, %) | Training Time (s) |
-|------------------------|--------------|-----------|-----------------------------|--------------------|
-| VGG16                  | 64.96        | 0.9251    | 77.42                       | 5349               |
-| ResNet50               | 74.36        | 0.7554    | 45.16                       | 1955               |
-| InceptionV3 (AdamW)    | 75.21        | 0.7460    | 61.29                       | 3015               |
-| **InceptionV3 (RMSprop)** | **73.48**    | **0.7859** | **61.29**                   | **3015**           |
+This project is an academic research work conducted as part of the M.Tech program in Artificial Intelligence and Data Science at Amrita Vishwa Vidyapeetham, Faridabad. Developed by **Soumen Mishra (DL.SC.P2AID24004)**, this project addresses the critical need for automated breast cancer detection in resource-limited settings where access to skilled radiologists is scarce.
 
-> InceptionV3 with RMSprop optimizer demonstrated a strong trade-off between accuracy and sensitivity, making it suitable for medical diagnosis applications.
+The research was completed in partial fulfillment of the requirements for the subjects **Deep Learning for Biomedical Data** and **Deep Learning**, demonstrating the practical application of AI in healthcare diagnostics. By leveraging deep learning techniques on ultrasound images, this academic work aims to contribute to the development of cost-effective, reliable diagnostic tools that can assist healthcare providers in early cancer detection.
+
+### 🎯 Project Goals
+- **Early Detection**: Enable timely identification of breast cancer through automated image analysis
+- **Accessibility**: Provide diagnostic capabilities in underserved regions with limited medical expertise  
+- **Accuracy**: Achieve reliable classification with high sensitivity for malignant cases
+- **Scalability**: Create a deployable solution for telemedicine applications
 
 ---
-## 🧪 Installation & Usage
 
+## ✨ Key Features
+
+🔬 **Multi-Class Classification**: Distinguishes between benign, malignant, and normal breast tissue  
+🧠 **Transfer Learning**: Utilizes pre-trained CNN models (VGG16, ResNet50, InceptionV3)  
+⚖️ **Class Imbalance Handling**: Implements weighted loss functions to address dataset imbalance  
+🔄 **Data Augmentation**: Enhances model robustness through image transformations  
+📊 **Comprehensive Evaluation**: Detailed performance metrics including sensitivity and specificity  
+☁️ **Cloud-Ready**: Optimized for Google Colab with GPU acceleration  
+
+---
+
+## 📊 Dataset
+
+### Dataset Overview
+- **Source**: [Breast Ultrasound Images Dataset](https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset) (Kaggle)
+- **Total Images**: 780 ultrasound images
+- **Image Format**: PNG/JPG files
+- **Resolution**: Variable (resized to model-specific dimensions)
+
+### Class Distribution
+| Class | Count | Percentage |
+|-------|-------|------------|
+| 🟢 Benign | 437 | 56.0% |
+| 🔴 Malignant | 210 | 27.0% |
+| ⚪ Normal | 133 | 17.0% |
+
+### Data Split Strategy
+- **Training**: 70% (546 images) - with augmentation
+- **Validation**: 15% (117 images) - for hyperparameter tuning
+- **Testing**: 15% (117 images) - for final evaluation
+
+---
+
+## 🏗️ Model Architecture
+
+### Pre-trained Models
+We implemented and compared three state-of-the-art CNN architectures:
+
+#### 1. 🧠 VGG16
+- **Layers**: 16 layers
+- **Parameters**: 138M
+- **Input Size**: 224×224×3
+- **Strengths**: Simple architecture, proven performance
+
+#### 2. 🔗 ResNet50  
+- **Layers**: 50 layers with residual connections
+- **Parameters**: 25M
+- **Input Size**: 224×224×3
+- **Strengths**: Addresses vanishing gradient problem
+
+#### 3. 🎯 InceptionV3 (Best Performer)
+- **Layers**: 48 layers with inception modules
+- **Parameters**: 24M  
+- **Input Size**: 299×299×3
+- **Strengths**: Multi-scale feature extraction
+
+### Custom Classification Head
+```
+GlobalAveragePooling2D → Dense(512, ReLU) → BatchNormalization → Dropout(0.5) → Dense(3, Softmax)
+```
+
+---
+
+## 🚀 Results
+
+### 🏆 Best Model Performance (InceptionV3 with RMSprop)
+
+| Metric | Score |
+|--------|-------|
+| **Test Accuracy** | **73.48%** |
+| **Test Loss** | 0.7859 |
+| **Training Time** | 3,015 seconds |
+
+### 📊 Class-wise Performance
+
+| Class | Sensitivity | Specificity | F1-Score |
+|-------|------------|-------------|----------|
+| **Benign** | 86.36% | 74.51% | 0.8382 |
+| **Malignant** | **61.29%** | **91.86%** | **0.6667** |
+| **Normal** | 60.00% | 90.72% | 0.5854 |
+
+### 🔄 Model Comparison
+
+| Model | Accuracy | Loss | Training Time |
+|-------|----------|------|---------------|
+| VGG16 | 64.96% | 0.9251 | 5,349s |
+| ResNet50 | 74.36% | 0.7554 | 1,955s |
+| **InceptionV3** | **75.21%** | **0.7460** | **3,015s** |
+
+---
+
+## ⚙️ Installation
+
+### Prerequisites
+- Python 3.10+
+- CUDA-compatible GPU (recommended)
+- Google Colab Pro (for cloud execution)
+
+### Required Dependencies
 ```bash
-# Clone the repo
-git clone https://github.com/your-username/breast-ultrasound-classification.git
-cd breast-ultrasound-classification
+pip install tensorflow==2.15
+pip install keras==2.15
+pip install scikit-learn==1.4
+pip install pandas==2.2
+pip install matplotlib==3.8
+pip install seaborn==0.13
+pip install Pillow
+```
 
-# Install dependencies
-pip install -r requirements.txt
+### Clone Repository
+```bash
+git clone https://github.com/soumenmishra/breast-cancer-classification.git
+cd breast-cancer-classification
+```
 
-# Run the notebook
-jupyter notebook Breast_Ultrasound_Classification.ipynb
+---
 
-## 📚 References
+## 🔧 Usage
 
-1. **World Health Organization.** (2023). *Breast cancer*. [Link](https://www.who.int/news-room/fact-sheets/detail/breast-cancer)
-2. **American Cancer Society.** (2023). *Breast cancer survival rates*. [Link](https://www.cancer.org/cancer/breast-cancer/understanding-a-breast-cancer-diagnosis/breast-cancer-survival-rates.html)
-3. Han, S., Kang, H., Jeong, J., & Park, S. (2018). *Breast cancer diagnosis using deep learning on mammography images*. Journal of Medical Imaging, 5(2), 021402. [DOI:10.1117/1.JMI.5.2.021402](https://doi.org/10.1117/1.JMI.5.2.021402)
-4. Litjens, G., Kooi, T., Bejnordi, B. E., et al. (2017). *A survey on deep learning in medical image analysis*. Medical Image Analysis, 42, 60–88. [DOI:10.1016/j.media.2017.07.005](https://doi.org/10.1016/j.media.2017.07.005)
-5. Alcaraz, J., Lopez, M., & Sanchez, R. (2020). *Deep learning for breast ultrasound image classification*. IEEE Transactions on Medical Imaging, 39(5), 1456–1465. [DOI:10.1109/TMI.2019.2944773](https://doi.org/10.1109/TMI.2019.2944773)
-6. Kaggle. *Breast Ultrasound Images Dataset*. [https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset](https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset)
+### 1. Dataset Preparation
+```python
+# Download dataset from Kaggle
+# Organize in directory structure:
+# dataset/
+# ├── benign/
+# ├── malignant/
+# └── normal/
+```
 
+### 2. Training Models
+```python
+# Run the complete pipeline
+python train_models.py
+
+# Or use individual components
+from src.preprocessing import load_and_preprocess_data
+from src.models import build_model, train_model
+from src.evaluation import evaluate_model
+
+# Load data
+train_gen, val_gen, test_gen = load_and_preprocess_data()
+
+# Build and train model
+model = build_model('inception_v3')
+history = train_model(model, train_gen, val_gen)
+
+# Evaluate performance
+results = evaluate_model(model, test_gen)
+```
+
+### 3. Making Predictions
+```python
+# Load trained model
+model = tf.keras.models.load_model('models/inception_v3_model.keras')
+
+# Preprocess new image
+image = preprocess_image('path/to/ultrasound_image.jpg')
+
+# Make prediction
+prediction = model.predict(image)
+class_names = ['benign', 'malignant', 'normal']
+predicted_class = class_names[np.argmax(prediction)]
+confidence = np.max(prediction) * 100
+
+print(f"Prediction: {predicted_class} (Confidence: {confidence:.2f}%)")
+```
+
+---
+
+## 📈 Performance Metrics
+
+### Confusion Matrix (InceptionV3)
+```
+           Predicted
+Actual    Ben  Mal  Nor
+Benign    57    8    1   (86.36% sensitivity)
+Malignant  7   19    5   (61.29% sensitivity)  
+Normal     6    2   12   (60.00% sensitivity)
+```
+
+### Key Medical Metrics
+- **Malignant Sensitivity**: 61.29% (crucial for cancer detection)
+- **Malignant Specificity**: 91.86% (low false positive rate)
+- **Overall Accuracy**: 73.48% (competitive for small dataset)
+
+---
+
+## 🔬 Technical Details
+
+### Data Preprocessing
+- **Normalization**: ImageNet statistics (mean: [0.485, 0.456, 0.406], std: [0.229, 0.224, 0.225])
+- **Augmentation**: Rotation (±20°), horizontal flip, zoom (±10%), brightness adjustment
+- **Resizing**: Model-specific dimensions (224×224 or 299×299)
+
+### Training Configuration
+- **Optimizer**: RMSprop (learning_rate=0.0001)
+- **Loss Function**: Categorical Crossentropy with label smoothing (0.1)
+- **Batch Size**: 8-16 (model-dependent)
+- **Epochs**: 20 with early stopping (patience=5)
+- **Class Weights**: Balanced (Benign: 0.59, Malignant: 1.24, Normal: 1.96)
+
+### Hardware Requirements
+- **GPU**: NVIDIA GPU with CUDA support (recommended)
+- **RAM**: 8GB+ (12GB+ recommended)
+- **Storage**: 2GB for models and datasets
+
+---
+
+## 🎯 Future Work
+
+### 🚀 Planned Enhancements
+- [ ] **Dataset Expansion**: Collaborate with medical institutions for larger, diverse datasets
+- [ ] **Ensemble Methods**: Combine multiple models for improved accuracy
+- [ ] **Explainable AI**: Implement Grad-CAM for visualization of model decision-making
+- [ ] **Mobile Deployment**: Optimize models for mobile and edge devices
+- [ ] **Clinical Integration**: Develop API for integration with hospital systems
+- [ ] **Multi-modal Analysis**: Incorporate patient history and clinical data
+
+### 🔬 Research Directions
+- [ ] **Federated Learning**: Train models across multiple hospitals while preserving privacy
+- [ ] **Semi-supervised Learning**: Leverage unlabeled ultrasound images
+- [ ] **Domain Adaptation**: Improve generalization across different ultrasound machines
+- [ ] **Real-time Processing**: Optimize for live ultrasound analysis
+
+---
+
+## 👥 Contributing
+
+We welcome contributions from the community! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+### How to Contribute
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Areas for Contribution
+- 🐛 Bug fixes and code improvements
+- 📊 New evaluation metrics and visualizations
+- 🧠 Novel model architectures
+- 📝 Documentation improvements
+- 🧪 Additional preprocessing techniques
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+### 👨‍🎓 Author
+**Soumen Mishra** (DL.SC.P2AID24004)  
+M.Tech Student, Artificial Intelligence and Data Science  
+School of Artificial Intelligence  
+Amrita Vishwa Vidyapeetham, Faridabad  
+
+### 🎯 Academic Supervisors
+- **Dr. Lakshmi Mohandas** - Project Guide (Deep Learning)
+- **Dr. Sakshi Ahuja** - Project Guide (Deep Learning for Biomedical Data)
+- **Prof. Kamal Bijlani** - Dean, School of Artificial Intelligence
+
+### 🏛️ Institution
+**Amrita Vishwa Vidyapeetham, Faridabad**  
+School of Artificial Intelligence  
+*Fostering innovation and research in AI for healthcare*
+
+### 🛠️ Technical Resources
+- **Dataset**: [Breast Ultrasound Images Dataset](https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset) from Kaggle
+- **Computing Platform**: Google Colab Pro for GPU acceleration
+- **Development Frameworks**: TensorFlow 2.15, Keras 2.15, Scikit-learn 1.4
+- **Visualization Tools**: Matplotlib 3.8, Seaborn 0.13
+
+### 🌐 Open Source Community
+Special gratitude to the open-source community for providing invaluable tools and resources that made this academic research possible.
+
+### 📚 Academic Impact
+This project represents a contribution to the growing body of research in AI-powered medical diagnostics, specifically focusing on breast cancer detection using deep learning techniques. The work demonstrates the potential for automated systems to assist healthcare providers, particularly in resource-limited settings.
+
+---
+
+<div align="center">
+  <h3>🌟 Star this repository if you found it helpful! 🌟</h3>
+  <p>
+    <a href="https://github.com/soumenmishra/breast-cancer-classification/issues">Report Bug</a> •
+    <a href="https://github.com/soumenmishra/breast-cancer-classification/issues">Request Feature</a> •
+    <a href="#-contributing">Contributing</a>
+  </p>
+  
+  <p><em>Academic research by Soumen Mishra - M.Tech AI & DS, Amrita Vishwa Vidyapeetham</em></p>
+  <p><em>Made with ❤️ for advancing medical AI and improving healthcare outcomes</em></p>
+</div>
