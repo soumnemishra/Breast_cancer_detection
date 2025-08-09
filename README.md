@@ -25,8 +25,7 @@
 - **Student**: Soumen Mishra (DL.SC.P2AID24004)
 - **Program**: M.Tech in Artificial Intelligence and Data Science
 - **Institution**: Amrita Vishwa Vidyapeetham, Faridabad
-- **Academic Year**: 2024-25
-- **Submission Date**: January 10, 2025
+
 
 ### 📖 Course Requirements
 This project was developed in partial fulfillment of the requirements for:
@@ -43,6 +42,7 @@ This project was developed in partial fulfillment of the requirements for:
 ---
 
 ## 📋 Table of Contents
+-
 - [🌟 Overview](#-overview)
 - [🎓 Academic Context](#-academic-context)
 - [✨ Key Features](#-key-features)
@@ -62,9 +62,11 @@ This project was developed in partial fulfillment of the requirements for:
 
 ## 🌟 Overview
 
-This project is an academic research work conducted as part of the M.Tech program in Artificial Intelligence and Data Science at Amrita Vishwa Vidyapeetham, Faridabad. Developed by **Soumen Mishra (DL.SC.P2AID24004)**, this project addresses the critical need for automated breast cancer detection in resource-limited settings where access to skilled radiologists is scarce.
+This project develops a deep learning pipeline for classifying breast ultrasound images into benign, malignant, and normal categories to facilitate early breast cancer detection. Utilizing transfer learning with pre-trained models (VGG16, ResNet50, and InceptionV3), the pipeline achieves a test accuracy of 73.48% using the InceptionV3 model, with a sensitivity of 61.29% for malignant cases, crucial for medical diagnostics.
 
-The research was completed in partial fulfillment of the requirements for the subjects **Deep Learning for Biomedical Data** and **Deep Learning**, demonstrating the practical application of AI in healthcare diagnostics. By leveraging deep learning techniques on ultrasound images, this academic work aims to contribute to the development of cost-effective, reliable diagnostic tools that can assist healthcare providers in early cancer detection.
+The project addresses challenges such as a small dataset size (780 images), class imbalance, and high sensitivity requirements for medical applications. It leverages data augmentation, class weighting, and cloud-based GPU computing (Google Colab) to ensure robust performance. The pipeline is designed for potential telemedicine applications, enabling remote diagnosis in resource-limited settings.
+
+This repository contains the source code, documentation, and instructions to reproduce the results, as submitted for partial fulfillment of the M.Tech. degree in Artificial Intelligence and Data Science at Amrita Vishwa Vidyapeetham, Faridabad.
 
 ### 🎯 Project Goals
 - **Early Detection**: Enable timely identification of breast cancer through automated image analysis
@@ -325,7 +327,7 @@ We welcome contributions from the community! Please see our [Contributing Guidel
 ## 🙏 Acknowledgments
 
 ### 👨‍🎓 Author
-**Soumen Mishra** (DL.SC.P2AID24004)  
+**Soumen Mishra** 
 M.Tech Student, Artificial Intelligence and Data Science  
 School of Artificial Intelligence  
 Amrita Vishwa Vidyapeetham, Faridabad  
