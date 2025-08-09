@@ -185,7 +185,7 @@ pip install Pillow
 
 ### Clone Repository
 ```bash
-git clone https://github.com/soumenmishra/breast-cancer-classification.git
+git clone (https://github.com/soumnemishra/Breast_cancer_detection.git)
 cd breast-cancer-classification
 ```
 
@@ -320,11 +320,7 @@ We welcome contributions from the community! Please see our [Contributing Guidel
 
 ---
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 ## 🙏 Acknowledgments
 
