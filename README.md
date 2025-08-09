@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/Python-3.10+-blue.svg" alt="Python">
   <img src="https://img.shields.io/badge/TensorFlow-2.15-orange.svg" alt="TensorFlow">
   <img src="https://img.shields.io/badge/Keras-2.15-red.svg" alt="Keras">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+
   <img src="https://img.shields.io/badge/Accuracy-73.48%25-brightgreen.svg" alt="Accuracy">
 </div>
 
